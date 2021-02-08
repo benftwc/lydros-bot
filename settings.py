@@ -3,7 +3,7 @@ from decouple import config
 
 # The prefix that will be used to parse commands.
 # It doesn't have to be a single character!
-COMMAND_PREFIX = "!"
+COMMAND_PREFIX = config("BOT_DEFAULT_PREFIX")
 
 # The bot token. Keep this secret!
 BOT_TOKEN = config("DISCORD_API_BOT_TOKEN")
