@@ -1,4 +1,4 @@
-# LYROS, THE LOGSKEEPER
+# LYDROS, THE LOGSKEEPER
 
 ![Lyros, the Lorekeeper](https://i.imgur.com/VA1mFiX.jpg)
 
