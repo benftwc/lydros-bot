@@ -1,11 +1,5 @@
-# lydros-bot
+# LYROS
 
-## Setup bot
+## The Discord Logs handler for World of Warcrafts
 
-```shell
-$ git clone <repos-url>/lydros-bot.git
-$ cd lydros-bot
-$ python -m venv .venv
-$ source .venv/bin/activate
-$ pip install -r dev-requirements.txt
-```
+Inspired by https://github.com/agubelu/discord-bot-template
