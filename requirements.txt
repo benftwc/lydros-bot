@@ -1,1 +1,7 @@
-discord.py==1.6.0
+APScheduler
+discord.py
+emoji
+pytz
+six
+tzlocal
+websockets
