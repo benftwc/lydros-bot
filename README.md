@@ -18,7 +18,8 @@ Inspired by https://github.com/agubelu/discord-bot-template
 DISCORD_API_BOT_TOKEN=<Your bot API token>
 BOT_DEFAULT_PREFIX=<your default bot prefix>
 ```
-4. (recommanded) create and use [Python's virtual env module](https://docs.python.org/3/library/venv.html)
+4. (recommanded) create and use [Python's virtual env module](https://docs.python.org/3/library/venv.html) 
+
 4.a `python -m venv .venv && source .venv/bin/activate`
 5. Install development dependencies : `$ pip install -r dev-requirements.txt`
 6. Install Coding dependencies : `$ pip install pre-commit && pre-commit install`
