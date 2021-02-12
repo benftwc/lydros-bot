@@ -1,3 +1,4 @@
+![CI](https://github.com/benftwc/lydros-bot/workflows/CI/badge.svg)
 # LYDROS
 ## THE LOGSKEEPER
 
