@@ -19,9 +19,7 @@ async def handle_command(command, args, message, bot_client):
     if command not in COMMAND_HANDLERS:
         return
 
-    print(
-        f"{message.author.name}: {settings.COMMAND_PREFIX}{command} " + " ".join(args)
-    )
+    # print(f"{message.author.name}: run {command.upper()} command with\n{args}")
 
     # Retrieve the command
     cmd_obj = COMMAND_HANDLERS[command]
