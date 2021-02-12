@@ -5,3 +5,4 @@ pytz
 six
 tzlocal
 websockets
+sentry-sdk
