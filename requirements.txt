@@ -6,3 +6,4 @@ six
 tzlocal
 websockets
 sentry-sdk
+python-decouple
