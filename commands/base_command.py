@@ -1,9 +1,7 @@
 import settings
 
-# Base command class
-# Do not modify!
-class BaseCommand:
 
+class BaseCommand:
     def __init__(self, description, params):
         self.name = type(self).__name__.lower()
         self.params = params

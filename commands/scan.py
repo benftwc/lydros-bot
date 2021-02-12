@@ -1,9 +1,10 @@
-from .base_command import BaseCommand
 import json
-import requests
-from exceptions import ScanException
-from discord import Embed
 import logging
+
+import requests
+from discord import Embed
+
+from .base_command import BaseCommand
 
 # This show an invite link to this bot
 class Scan(BaseCommand):

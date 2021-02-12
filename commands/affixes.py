@@ -1,8 +1,11 @@
-from discord import Embed, Colour
-from .base_command import BaseCommand
-import requests
 import json
 from io import BytesIO
+
+import requests
+from discord import Colour
+from discord import Embed
+
+from .base_command import BaseCommand
 
 # This is a convenient command that automatically generates a helpful
 # message showing all available commands

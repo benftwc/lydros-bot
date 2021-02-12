@@ -1,6 +1,7 @@
-from .base_command import BaseCommand
-import time
 import datetime
+import time
+
+from .base_command import BaseCommand
 
 start_time = time.time()
 
