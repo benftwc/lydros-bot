@@ -1,5 +1,7 @@
 import os
 
+from discord import Embed
+
 from .base_command import BaseCommand
 
 # This show an invite link to this bot
