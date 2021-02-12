@@ -11,7 +11,7 @@ class BaseCommand:
         if self.params:
             desc += " " + " ".join(f"*<{p}>*" for p in params)
 
-        desc += f": {description}."
+        desc += f": {description}"
         self.description = desc
 
     # Every command must override this method
