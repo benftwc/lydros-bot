@@ -16,6 +16,7 @@ Inspired by https://github.com/agubelu/discord-bot-template
 
 ```
 DISCORD_API_BOT_TOKEN=<Your bot API token>
+DISCORD_API_CLIENT_ID=<Your bot API Client Token>
 BOT_DEFAULT_PREFIX=<your default bot prefix>
 ```
 4. (optionnal) create and use [Python's virtual env module](https://docs.python.org/3/library/venv.html) 
