@@ -101,7 +101,8 @@ def main():
                 await firstPromptBot.delete()
             else:
                 await firstPromptBot.delete()
-                await message.add_reaction("👌")
+                # await message.add_reaction("👌")
+                await message.add_reaction("<:lydros:816500068009377803>")
                 if reaction.emoji == "👍":
                     await message.delete()
                     secondPromptBot = await channel.send("Titre du log ?")
