@@ -10,7 +10,11 @@ import sys
 import settings
 import discord
 import message_handler
+import re
+import asyncio
+from datetime import date
 
+from discord import Embed
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from events.base_event import BaseEvent
 from events import *
@@ -74,6 +78,53 @@ def main():
 
     @client.event
     async def on_message(message):
+        warcraftlogs_pattern = re.compile(settings.WARCRAFTLOGS_REGEX)
+        if warcraftlogs_pattern.search(message.content):
+            channel = message.channel
+            logUrl = message.content
+
+            firstPromptBot = await channel.send("Log de raid ?")
+            await firstPromptBot.add_reaction("👍")
+            await firstPromptBot.add_reaction("👎")
+
+            def checkReact(reaction, user):
+                return user == message.author and str(reaction.emoji) in ["👍", "👎"]
+
+            def checkAuthorID(user):
+                return user.author.id == message.author.id
+
+            try:
+                reaction, user = await client.wait_for(
+                    "reaction_add", timeout=10.0, check=checkReact
+                )
+            except asyncio.TimeoutError:
+                await firstPromptBot.delete()
+            else:
+                await firstPromptBot.delete()
+                await message.add_reaction("👌")
+                if reaction.emoji == "👍":
+                    await message.delete()
+                    secondPromptBot = await channel.send("Titre du log ?")
+                    try:
+                        logNameMessage = await client.wait_for(
+                            "message", check=checkAuthorID
+                        )
+                    except asyncio.TimeoutError:
+                        await firstPromptBot.delete()
+                    else:
+                        await secondPromptBot.delete()
+                        await logNameMessage.delete()
+                        now = date.today()
+                        embed = Embed(
+                            title=f"{now.strftime('%d/%m/%Y')} ** {logNameMessage.content} ** from @{user.name}",
+                            url=logUrl,
+                        )
+                        embed.add_field(name="Warlogs", value=logUrl, inline=False)
+                        embed.add_field(name="Warlogs", value=logUrl, inline=False)
+                        embed.add_field(name="Warlogs", value=logUrl, inline=False)
+                        embed.add_field(name="Warlogs", value=logUrl, inline=False)
+
+                        await message.channel.send(embed=embed)
         await common_handle_message(message)
 
     @client.event
